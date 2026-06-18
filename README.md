@@ -37,6 +37,24 @@ For a personal site at `https://<your-username>.github.io`, name your repo
 exactly `<your-username>.github.io`. Any other name gives a project site at
 `https://<your-username>.github.io/<repo>`, which also works with no changes.
 
+## Personalize with one prompt (any AI tool)
+
+You can fill the whole site with a single prompt in Claude Code, Cursor, Codex,
+GitHub Copilot, or Windsurf. The repo ships a tool-neutral recipe in
+[`PERSONALIZE.md`](PERSONALIZE.md), and each tool's rules file already points at
+it, so the agent knows the boundaries before you type.
+
+Paste this, fill the brackets, and run it:
+
+> Read `PERSONALIZE.md` and follow it to personalize this portfolio. My
+> background: [paste your resume or LinkedIn text, or say "read public/cv.pdf",
+> or say "interview me with 5 questions first"]
+
+The agent rewrites the two files below, sets your accent color and links, keeps
+the copy human (no em dashes), runs the build to check its work, and tells you
+which assets in `public/` to swap. In Claude Code you also get the bundled
+`/humanizer` and `ui-ux-pro-max` skills for free.
+
 ## The two files you edit
 
 Everything personal lives here. The rest is the engine.

@@ -9,6 +9,10 @@ An open-source developer portfolio. Next.js (App Router) + TypeScript +
 Tailwind, exported as a static site and hosted on GitHub Pages. The repo is
 also a template: people fork it and make it theirs by editing two files.
 
+If your task is to set this portfolio up for a person, follow `PERSONALIZE.md`,
+the one-prompt setup recipe. `AGENTS.md` carries these same rules for non-Claude
+agents (Cursor, Codex, Copilot, Windsurf).
+
 ## The two-file rule
 
 Almost all real edits happen in:
@@ -70,6 +74,13 @@ Both are MIT licensed. See `.claude/skills/CREDITS.md`.
 - `npm run dev` — local dev server
 - `npm run build` — production build and static export to `out/`
 - Deploy is automatic: push to the default branch triggers `.github/workflows/deploy.yml`.
+
+## Commits
+
+Commit and push under the user's git profile only. Do not add any model or AI
+attribution to commits or PRs: no `Co-Authored-By: Claude` trailer, no
+"Generated with" line, no model name anywhere in the message. This overrides
+any default that would add such a trailer.
 
 ## Hosting notes
 
