@@ -3,56 +3,163 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Humayoun Baig — Full-Stack & Mobile Engineer</title>
-  <meta name="description" content="Humayoun Baig — full-stack & mobile engineer. React Native, Expo, React, Node.js, NestJS, TypeScript. Building production apps from schema to store." />
-  <meta property="og:title" content="Humayoun Baig — Full-Stack & Mobile Engineer" />
-  <meta property="og:description" content="React Native, Expo, React, Node.js, NestJS, TypeScript. Building production apps from schema to store." />
+  <title>Humayoun Baig | Full-Stack &amp; Mobile Engineer</title>
+  <meta name="description" content="Humayoun Baig, full-stack and mobile engineer in Karachi. React Native, Expo, React, Node.js and TypeScript, plus shipping AI features with local open-weight models." />
+  <meta property="og:title" content="Humayoun Baig | Full-Stack &amp; Mobile Engineer" />
+  <meta property="og:description" content="Production apps from database schema to App Store, now with AI features. React Native, Expo, React, Node.js and TypeScript." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>" />
+  <meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0f12'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23e0a458'%3EHB%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.className = "js";
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
 </head>
 <body>
-  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <a class="skip" href="#main">Skip to content</a>
 
   <header class="nav" id="top">
-    <a class="brand" href="#top">hb<span>.</span></a>
-    <nav>
+    <a class="brand" href="#top" aria-label="Humayoun Baig, back to top">hb<span>.</span></a>
+    <nav aria-label="Primary">
+      <a href="#ai">AI work</a>
+      <a href="#experience" hidden>Experience</a>
       <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
       <a href="#stack">Stack</a>
       <a href="#contact">Contact</a>
-      <a class="nav-cta" href="https://www.linkedin.com/in/humayoun-baig/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="nav-cta" href="https://www.linkedin.com/in/humayoun-baig" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme" title="Switch theme">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    </button>
   </header>
 
-  <main>
+  <main id="main">
     <!-- HERO -->
-    <section class="hero">
-      <p class="kicker">Full-Stack &amp; Mobile Engineer</p>
-      <h1>Humayoun <em>Baig</em></h1>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="kicker">Full-Stack &amp; Mobile Engineer · Karachi, Pakistan</p>
+      <h1 id="hero-title">Humayoun <em>Baig</em></h1>
       <p class="lede">
         I ship production apps end-to-end — from database schema to App&nbsp;Store.
         10+ apps across sports, fitness, retail and logistics, built with
         <strong>React&nbsp;Native, Expo, React, Node.js and TypeScript</strong>.
       </p>
+      <p class="lede lede-ai">
+        I now build with and ship AI features too: local open-weight models, guardrailed outputs and an agentic way of working.
+      </p>
       <div class="hero-cta">
-        <a class="btn btn-solid" href="#work">See the work</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/humayoun-baig/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn btn-solid" href="#ai">See the AI work</a>
+        <a class="btn btn-ghost" href="#work">Selected work</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/humayoun-baig" target="_blank" rel="noopener">Connect on LinkedIn</a>
       </div>
       <ul class="hero-meta">
         <li>10+ apps shipped</li>
         <li>iOS · Android · Web · API</li>
+        <li>Udacity React Nanodegree graduate</li>
         <li>Open to opportunities</li>
       </ul>
     </section>
 
-    <!-- WORK -->
-    <section id="work" class="section">
-      <h2 class="section-title">Selected work</h2>
+    <!-- AI WORK -->
+    <section id="ai" class="section ai" aria-labelledby="ai-title">
+      <p class="eyebrow">Now building</p>
+      <h2 class="section-title" id="ai-title">AI work</h2>
+      <div class="ai-grid">
 
-      <article class="project reveal">
+        <article class="ai-card">
+          <h3>Marigold</h3>
+          <p class="ai-sub">A private postpartum recovery companion.</p>
+          <dl>
+            <dt>Problem</dt>
+            <dd>A recovery app that gives daily guidance should not send sensitive health check-ins to a cloud model, and should never let a model improvise medical advice.</dd>
+            <dt>Approach</dt>
+            <dd>An open-weight model (Qwen2.5 3B Instruct, Apache-2.0) served by Ollama on localhost writes a short daily plan from a fixed catalog: movement, meals, comfort practices and a plain "call a clinician" instruction when the check-in says so. The app refuses ids and phrases the model is not allowed to use.</dd>
+            <dt>Outcome</dt>
+            <dd>Data stays in browser storage and there is no cloud model. It works offline once the model is downloaded, and falls back to a catalog-built plan if Ollama is down.</dd>
+          </dl>
+          <ul class="stack-list"><li>Next.js</li><li>TypeScript</li><li>Ollama</li><li>Qwen2.5</li></ul>
+          <p class="links">
+            <a href="https://github.com/HumayounBaig/marigold" target="_blank" rel="noopener">Repo<span class="sr"> (GitHub, Marigold)</span></a>
+            <a href="https://dev.to/humayounbaig/marigold-hacktoberfest-weekend-challenge-1d7a" target="_blank" rel="noopener">Write-up<span class="sr"> (DEV Hacktoberfest Weekend Challenge, Marigold)</span></a>
+          </p>
+        </article>
+
+        <article class="ai-card">
+          <h3>Agentic engineering workflow</h3>
+          <p class="ai-sub">How I run my development.</p>
+          <dl>
+            <dt>Problem</dt>
+            <dd>AI-written code is fast but unreviewed, and fake dependency PRs now carry malware, such as the "fake font" family.</dd>
+            <dt>Approach</dt>
+            <dd>A multi-agent setup: a manager model breaks work into tasks for specialised subagents (coder, reviewer, tester, scanner, verifier, runner) on smaller models, and can delegate across providers for independent second reviews. A custom supply-chain guard (malware scanner, git hooks, CI workflow and force-push alerts) blocks that malware family.</dd>
+            <dt>Outcome</dt>
+            <dd>Every push is gated on tests plus an AI code review. This is private tooling, so there is no public link.</dd>
+          </dl>
+          <ul class="stack-list"><li>Claude Code subagents</li><li>Git hooks</li><li>CI</li><li>Code review gates</li></ul>
+        </article>
+
+        <article class="ai-card">
+          <h3>Playbright</h3>
+          <p class="ai-sub">A Chrome extension for streaming video.</p>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Dark scrims over streaming video black out the picture, and per-site rules break whenever a site changes.</dd>
+            <dt>Approach</dt>
+            <dd>Manifest V3 and dependency-free. It detects and fades dark scrims over video without hard-coded site rules, with per-site settings, presets, a keyboard shortcut and a click-to-hide picker. Built with the agentic workflow above.</dd>
+            <dt>Outcome</dt>
+            <dd>It stays idle on pages without video.</dd>
+          </dl>
+          <ul class="stack-list"><li>Chrome extension</li><li>Manifest V3</li><li>JavaScript</li></ul>
+          <p class="links">
+            <a href="https://github.com/HumayounBaig/overlay-blocker-chrome-ext" target="_blank" rel="noopener">Repo<span class="sr"> (GitHub, Playbright)</span></a>
+            <a href="https://dev.to/humayounbaig/removing-a-streaming-overlay-without-blacking-out-the-video-21im" target="_blank" rel="noopener">Write-up<span class="sr"> (DEV, Playbright)</span></a>
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE: remove the hidden attribute on this section and on its nav link once entries are added. -->
+    <section id="experience" class="section" aria-labelledby="exp-title" hidden>
+      <h2 class="section-title" id="exp-title">Experience</h2>
+      <ol class="timeline">
+        <!--
+        <li class="entry">
+          <div class="entry-head">
+            <h3>Role title</h3>
+            <p class="entry-meta">Company name · Mon YYYY to Mon YYYY</p>
+          </div>
+          <ul>
+            <li>First achievement or responsibility.</li>
+            <li>Second achievement or responsibility.</li>
+          </ul>
+        </li>
+        -->
+      </ol>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section" aria-labelledby="work-title">
+      <h2 class="section-title" id="work-title">Selected work</h2>
+
+      <div class="filters" role="group" aria-label="Filter projects" id="filters" hidden>
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-filter="mobile" aria-pressed="false">Mobile</button>
+        <button type="button" class="chip" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+        <button type="button" class="chip" data-filter="ai" aria-pressed="false">AI</button>
+        <button type="button" class="chip" data-filter="opensource" aria-pressed="false">Open source</button>
+      </div>
+
+      <div class="projects" id="projects">
+      <article class="project" data-cat="mobile">
         <div class="project-head">
           <h3>PadelBro</h3>
           <span class="tag">Mobile</span>
@@ -67,7 +174,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="fullstack">
         <div class="project-head">
           <h3>YourClubFit</h3>
           <span class="tag">Full-stack</span>
@@ -81,7 +188,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="fullstack">
         <div class="project-head">
           <h3>Buildsbe</h3>
           <span class="tag">Full-stack</span>
@@ -96,7 +203,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="fullstack">
         <div class="project-head">
           <h3>Fraterna</h3>
           <span class="tag">Full-stack</span>
@@ -111,7 +218,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="mobile">
         <div class="project-head">
           <h3>SportStreamer (Go Team)</h3>
           <span class="tag">Mobile</span>
@@ -126,7 +233,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="mobile">
         <div class="project-head">
           <h3>Fadah Distribution</h3>
           <span class="tag">Mobile</span>
@@ -140,7 +247,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="fullstack">
         <div class="project-head">
           <h3>Sports Mall (Kicks)</h3>
           <span class="tag">Full-stack</span>
@@ -154,7 +261,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="opensource">
         <div class="project-head">
           <h3>GCC Map SDK</h3>
           <span class="tag">Open source</span>
@@ -169,7 +276,7 @@
         </ul>
       </article>
 
-      <article class="project reveal">
+      <article class="project" data-cat="fullstack">
         <div class="project-head">
           <h3>Waygrid</h3>
           <span class="tag">Algorithm</span>
@@ -183,46 +290,104 @@
           <li>Python</li><li>Flask</li><li>Graph theory</li><li>C++</li><li>Mapbox</li>
         </ul>
       </article>
+
+      <article class="project" data-cat="ai">
+        <div class="project-head">
+          <h3>Marigold</h3>
+          <span class="tag">AI</span>
+        </div>
+        <p>
+          Private postpartum recovery companion. A local open-weight model writes a daily plan
+          from a fixed catalog, with guardrails on every id and phrase.
+        </p>
+        <ul class="stack-list">
+          <li>Next.js</li><li>TypeScript</li><li>Ollama</li><li>Qwen2.5</li>
+        </ul>
+        <p class="links">
+          <a href="#ai">Read the case</a>
+          <a href="https://github.com/HumayounBaig/marigold" target="_blank" rel="noopener">Repo<span class="sr"> (GitHub, Marigold)</span></a>
+        </p>
+      </article>
+
+      <article class="project" data-cat="ai">
+        <div class="project-head">
+          <h3>Playbright</h3>
+          <span class="tag">AI-built</span>
+        </div>
+        <p>
+          Dependency-free Manifest V3 Chrome extension that fades dark scrims over streaming
+          video without hard-coded site rules.
+        </p>
+        <ul class="stack-list">
+          <li>Chrome extension</li><li>Manifest V3</li><li>JavaScript</li>
+        </ul>
+        <p class="links">
+          <a href="#ai">Read the case</a>
+          <a href="https://github.com/HumayounBaig/overlay-blocker-chrome-ext" target="_blank" rel="noopener">Repo<span class="sr"> (GitHub, Playbright)</span></a>
+        </p>
+      </article>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section id="writing" class="section" aria-labelledby="writing-title">
+      <h2 class="section-title" id="writing-title">Writing</h2>
+      <ul class="posts">
+        <li>
+          <time datetime="2026-10-03">2026-10-03</time>
+          <a href="https://dev.to/humayounbaig/marigold-hacktoberfest-weekend-challenge-1d7a" target="_blank" rel="noopener">Marigold (DEV Hacktoberfest Weekend Challenge)</a>
+        </li>
+        <li>
+          <time datetime="2026-10-06">2026-10-06</time>
+          <a href="https://dev.to/humayounbaig/removing-a-streaming-overlay-without-blacking-out-the-video-21im" target="_blank" rel="noopener">Removing a streaming overlay without blacking out the video</a>
+        </li>
+      </ul>
     </section>
 
     <!-- STACK -->
-    <section id="stack" class="section">
-      <h2 class="section-title">Stack</h2>
+    <section id="stack" class="section" aria-labelledby="stack-title">
+      <h2 class="section-title" id="stack-title">Stack</h2>
       <div class="stack-grid">
-        <div class="stack-col reveal">
+        <div class="stack-col">
           <h3>Mobile</h3>
           <p>React Native · Expo · TypeScript · Expo Router · Firebase · Redux Toolkit · Push notifications · App Store &amp; Play Store deploys</p>
         </div>
-        <div class="stack-col reveal">
+        <div class="stack-col">
           <h3>Frontend</h3>
           <p>React · Next.js · TanStack Router &amp; Start · Vite · Tailwind CSS · shadcn/ui · Radix · MUI · Zustand</p>
         </div>
-        <div class="stack-col reveal">
+        <div class="stack-col">
           <h3>Backend</h3>
           <p>Node.js · Express · NestJS · TypeScript · MongoDB · Mongoose · TypeORM · JWT &amp; session auth · Zod · Stripe</p>
         </div>
-        <div class="stack-col reveal">
+        <div class="stack-col">
           <h3>Infra &amp; tooling</h3>
           <p>AWS (S3, ECR, ECS Fargate) · Docker · GitHub Actions CI/CD · Git · Husky · Jest · Testing Library</p>
+        </div>
+        <div class="stack-col">
+          <h3>AI</h3>
+          <p>Ollama · open-weight LLMs (Qwen2.5) · prompt and output guardrails · multi-agent coding workflows (Claude Code subagents) · AI code review gates</p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <h2 class="section-title">Let's build something</h2>
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Let's build something</h2>
       <p class="contact-lede">
         The fastest way to reach me is email — or connect on LinkedIn.
       </p>
       <div class="contact-links">
         <a class="btn btn-solid" href="mailto:Humayoun.mani@gmail.com">Humayoun.mani@gmail.com</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/humayoun-baig/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/humayoun-baig" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/HumayounBaig" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://dev.to/humayounbaig" target="_blank" rel="noopener">DEV</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <span>© <span id="year">2026</span> Humayoun Baig</span>
+    <span>© <span id="year">2026</span> Humayoun Baig · Karachi, Pakistan</span>
     <a href="#top">Back to top ↑</a>
   </footer>
 
