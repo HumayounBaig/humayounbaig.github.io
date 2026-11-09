@@ -1,49 +1,57 @@
 (function () {
-  var bar = document.getElementById("progress-bar");
-  var nav = document.querySelector(".nav");
-  var reveals = document.querySelectorAll(".reveal");
+  var root = document.documentElement;
 
+  // Theme toggle: remembers the choice; without one, the OS preference applies via CSS.
+  var btn = document.getElementById("theme-toggle");
+  function current() {
+    return root.getAttribute("data-theme") ||
+      (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  }
+  if (btn) {
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  }
+
+  // Project filters: chips are hidden in markup so no-JS visitors see every card.
+  var filters = document.getElementById("filters");
+  var cards = document.querySelectorAll("#projects .project");
+  if (filters) {
+    filters.hidden = false;
+    filters.addEventListener("click", function (e) {
+      var chip = e.target.closest(".chip");
+      if (!chip) return;
+      var f = chip.getAttribute("data-filter");
+      filters.querySelectorAll(".chip").forEach(function (c) {
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+      });
+      cards.forEach(function (card) {
+        card.hidden = f !== "all" && card.getAttribute("data-cat") !== f;
+      });
+    });
+  }
+
+  // Active-section highlight in the nav.
+  var links = document.querySelectorAll('.nav nav a[href^="#"]');
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          links.forEach(function (a) {
+            a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
+          });
         });
       },
-      { threshold: 0.12 }
+      { rootMargin: "-40% 0px -55% 0px" }
     );
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in"); });
+    links.forEach(function (a) {
+      var s = document.querySelector(a.getAttribute("href"));
+      if (s) io.observe(s);
+    });
   }
-
-  function onScroll() {
-    var doc = document.documentElement;
-    var max = doc.scrollHeight - window.innerHeight;
-    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-    if (bar) bar.style.width = pct + "%";
-    if (nav) nav.classList.toggle("scrolled", window.scrollY > 10);
-  }
-
-  var ticking = false;
-  window.addEventListener(
-    "scroll",
-    function () {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(function () {
-          onScroll();
-          ticking = false;
-        });
-      }
-    },
-    { passive: true }
-  );
-
-  onScroll();
 
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
