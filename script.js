@@ -33,25 +33,28 @@
     });
   }
 
-  // Active-section highlight in the nav.
+  // Active-section highlight: the last section whose top has passed 45% of the viewport.
+  // One scroll-based rule, so the page top (no highlight) and bottom (Contact) stay consistent.
   var links = document.querySelectorAll('.nav nav a[href^="#"]');
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          links.forEach(function (a) {
-            a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
-          });
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    links.forEach(function (a) {
-      var s = document.querySelector(a.getAttribute("href"));
-      if (s) io.observe(s);
-    });
+  var pairs = [];
+  links.forEach(function (a) {
+    var s = document.querySelector(a.getAttribute("href"));
+    if (s && !s.hidden) pairs.push([a, s]);
+  });
+  function updateActive() {
+    var line = window.innerHeight * 0.45;
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    var current = null;
+    if (window.scrollY > 40) {
+      pairs.forEach(function (p) {
+        if (atBottom || p[1].getBoundingClientRect().top <= line) current = p[0];
+      });
+    }
+    links.forEach(function (a) { a.classList.toggle("active", a === current); });
   }
+  window.addEventListener("scroll", updateActive, { passive: true });
+  window.addEventListener("resize", updateActive);
+  updateActive();
 
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
