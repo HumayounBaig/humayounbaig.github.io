@@ -97,7 +97,8 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--text); text-decoration: none; margin-right: auto;
 }
 .brand span { color: var(--accent); }
-.nav nav { display: flex; flex-wrap: wrap; gap: 2px 4px; order: 3; width: 100%; }
+.nav nav { display: flex; flex-wrap: nowrap; gap: 2px 4px; order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; padding: 5px 56px 5px 5px; /* end padding lets the last link scroll clear of the fade */ mask-image: linear-gradient(90deg, #000 85%, transparent); } /* one swipeable row on phones */
+.nav nav a { flex: none; }
 .nav nav a {
   color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
   padding: 6px 10px; border-radius: 999px;
@@ -117,7 +118,7 @@ a:hover { text-decoration-thickness: 2px; }
 @media (min-width: 760px) {
   html { scroll-padding-top: 72px; }
   .nav { padding: 12px 32px; flex-wrap: nowrap; }
-  .nav nav { order: 0; width: auto; flex-wrap: nowrap; }
+  .nav nav { order: 0; width: auto; flex-wrap: nowrap; mask-image: none; padding: 0; overflow: visible; }
   .brand { margin-right: 0; }
   .nav { justify-content: space-between; }
   .nav-cta { display: inline-block !important; border: 1px solid var(--border); }
