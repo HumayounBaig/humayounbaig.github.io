@@ -48,7 +48,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 [hidden] { display: none !important; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { scroll-behavior: smooth; scroll-padding-top: 112px; } /* nav wraps to two rows on phones */
 
 body {
   background: var(--bg);
@@ -115,6 +115,7 @@ a:hover { text-decoration-thickness: 2px; }
 .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
 @media (min-width: 760px) {
+  html { scroll-padding-top: 72px; }
   .nav { padding: 12px 32px; flex-wrap: nowrap; }
   .nav nav { order: 0; width: auto; flex-wrap: nowrap; }
   .brand { margin-right: 0; }
@@ -151,6 +152,8 @@ h1 {
 }
 h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
 .lede { max-width: 680px !important; font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); }
+/* Left-align the narrower lede with the h1, which is centred at --max width. */
+.hero > .lede { margin-left: max(0px, calc((100% - var(--max)) / 2)); margin-right: auto; }
 .lede strong { color: var(--text); font-weight: 600; }
 .lede-ai { margin-top: 14px !important; color: var(--text); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px !important; }
